@@ -41,7 +41,7 @@ message : "your-jwt-token"
 
 ## *Profile Enpoints*
 ### *Get profile by email*
-*Endpoint* : `Post/api/profile/{email}`
+*Endpoint* : `https://thebulbproject.onrender.com/{email}`
 #### *Response Body*:
 ```json
 {
@@ -62,12 +62,12 @@ message : Profile does not exist
 ```
 
 ### *Update profile by email*
-*Endpoint* : `patch /api/profile/{email}`
+*Endpoint* : `https://thebulbproject.onrender.com/{email}`
 ```string
 message : Profile updated successfully
 ```
 ### *Delete profile by email*
-*Endpoint* : `patch /api/profile/{email}`
+*Endpoint* : `https://thebulbproject.onrender.com/{email}`
 ```string
 message : Profile updated successfully
 ```
