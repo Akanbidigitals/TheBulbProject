@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace TheBulbProject.Migrations
 {
     /// <inheritdoc />
-    public partial class MyFirstMigration : Migration
+    public partial class myfirstmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,11 +14,11 @@ namespace TheBulbProject.Migrations
                 name: "Forms",
                 columns: table => new
                 {
-                    FormId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FormType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FormTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    FormId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FormType = table.Column<string>(type: "TEXT", nullable: true),
+                    FormTitle = table.Column<string>(type: "TEXT", nullable: true),
+                    CreateTime = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,16 +26,35 @@ namespace TheBulbProject.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Profiles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    Role = table.Column<string>(type: "TEXT", nullable: false),
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
+                    PasswordHash = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Profiles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Fields",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Label = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Placeholder = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Options = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MaxRating = table.Column<int>(type: "int", nullable: false),
-                    FormID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Label = table.Column<string>(type: "TEXT", nullable: true),
+                    Placeholder = table.Column<string>(type: "TEXT", nullable: true),
+                    Options = table.Column<string>(type: "TEXT", nullable: true),
+                    MaxRating = table.Column<int>(type: "INTEGER", nullable: false),
+                    FormID = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -53,15 +71,15 @@ namespace TheBulbProject.Migrations
                 name: "FieldResponses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubmisionID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    RatingValue = table.Column<int>(type: "int", nullable: false),
-                    FieldID = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FormId = table.Column<int>(type: "int", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Message = table.Column<string>(type: "TEXT", nullable: true),
+                    status = table.Column<string>(type: "TEXT", nullable: true),
+                    SubmisionID = table.Column<string>(type: "TEXT", nullable: true),
+                    RatingValue = table.Column<int>(type: "INTEGER", nullable: false),
+                    FieldID = table.Column<int>(type: "INTEGER", nullable: false),
+                    RespondedAt = table.Column<string>(type: "TEXT", nullable: false),
+                    FormId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -105,6 +123,9 @@ namespace TheBulbProject.Migrations
         {
             migrationBuilder.DropTable(
                 name: "FieldResponses");
+
+            migrationBuilder.DropTable(
+                name: "Profiles");
 
             migrationBuilder.DropTable(
                 name: "Fields");
