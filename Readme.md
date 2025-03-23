@@ -4,11 +4,11 @@ TheBulbProject Web API is a RESTful API designed to handle forms and field respo
 
 ### Base url
 ```json
-https://your-api-url.com/api
+https://thebulbproject.onrender.com/
 ```
 ## Authentication Endpoints
 ### *Sign Up*
-*Endpoint* : `Post/SignUp`  
+*Endpoint* : `Post` `https://thebulbproject.onrender.com/SiginUp`  
 #### *Resquest Body*:
 ```json
 {
@@ -26,7 +26,7 @@ https://your-api-url.com/api
 message : "User created successfully"
 ```
 ### *Login*
-*Endpoint* : `Post/Login`  
+*Endpoint* : `Post` `https://thebulbproject.onrender.com/Login`  
 #### *Resquest Body*:
 ```json
 {
@@ -75,7 +75,7 @@ message : Profile updated successfully
 
 ## Forms Endpoints
 ### *Create Form*
-*Endpoint* : `Post/api/form`
+*Endpoint* : `Post` `https://thebulbproject.onrender.com//form`
 #### *Resquest Body*: 
 ```json
 {
@@ -88,7 +88,7 @@ message : Profile updated successfully
 message : "Form created successfully"
 ```
 ### *Get Form By ID*
-*Endpoint* : `Get/form/{id}` 
+*Endpoint* : `https://thebulbproject.onrender.com/{id}` 
 #### *Response Body*:
 ```json
 {
@@ -104,7 +104,7 @@ message : Form id does not exist
 ```
 
 ### *Get Form By Title*
-*Endpoint* : `Get/api/title/{id}` 
+*Endpoint* : `https://thebulbproject.onrender.com/title/{id}` 
 #### *Response Body*:
 ```json
 {
@@ -120,7 +120,7 @@ message : Form title does not exist
 ```
 
 ### *Update Form*
-*Endpoint* : `Patch/api/form/{id}` 
+*Endpoint* : `https://thebulbproject.onrender.com/form/{id}` 
 #### *Resquest Body*:
 ```json
 {
@@ -137,7 +137,7 @@ message : Form title does not exist
 
 ## Field Enpoints
 ### *Create Form*
-*Endpoint* : `Post/api/field`
+*Endpoint* : `https://thebulbproject.onrender.com/api/field`
 #### *Resquest Body*: 
 ```json
 {
@@ -151,7 +151,7 @@ message : Form title does not exist
 ```
 
 ### *Get Field By ID*
-*Endpoint* : `Get/api/field/{id}` 
+*Endpoint* : `https://thebulbproject.onrender.com/field/{id}` 
 #### *Response Body*:
 ```json
 {
@@ -171,7 +171,7 @@ message : Form title does not exist
 message : Field does not exist
 ```
 ### *Update Field*
-*Endpoint* : `Patch/api/field/{id}` 
+*Endpoint* : `https://thebulbproject.onrender.com/field/{id}` 
 #### *Resquest Body*:
 ```json
 {
@@ -186,12 +186,12 @@ message : Field does not exist
 }
 ```
 ### *Delete Field*
-*Endpoint* : `Delete /api/field/{id}` 
+*Endpoint* : `https://thebulbproject.onrender.com/field/{id}` 
 ```string
 message : Field deleted successfully.
 ```
 ### *Get Field by FormId*
-*Endpoint* : `Patch/api/byformId/{id}` 
+*Endpoint* : `https://thebulbproject.onrender.com/byformId/{id}` 
 #### *Response Body*:
 ```json
 [
@@ -222,7 +222,7 @@ message : Field deleted successfully.
 
 ## Field-Response Enpoints
 ### *Create Form*
-*Endpoint* : `Post/api/fieldresponse`
+*Endpoint* : `https://thebulbproject.onrender.com/api/fieldresponse`
 #### *Resquest Body*: 
 ```json
 {
@@ -233,7 +233,7 @@ message : Field deleted successfully.
 }
 ```
 ### *Get Field By ID*
-*Endpoint* : `Get/api/fieldresponse/{fieldid}` 
+*Endpoint* : `https://thebulbproject.onrender.com/api/fieldresponse/{fieldid}` 
 #### *Response Body*:
 ```json
 {
@@ -253,7 +253,7 @@ message : Field deleted successfully.
 message : Field response does not exist
 ```
 ### *Get All field Response*
-*Endpoint* : `Get/api/fieldresponse/all` 
+*Endpoint* : `https://thebulbproject.onrender.com/api/fieldresponse/all` 
 #### *Response Body*:
 ```json
 [
