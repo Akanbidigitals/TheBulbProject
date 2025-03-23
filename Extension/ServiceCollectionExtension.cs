@@ -14,7 +14,7 @@ namespace TheBulbProject.Extension
             var connectionString = configuration.GetConnectionString("ThebulbConnection");
             var applicationAssembly = typeof(ServiceCollectionExtension).Assembly;
 
-            services.AddDbContext<AppDBcontext>(r => r.UseSqlServer(connectionString));
+            services.AddDbContext<AppDBcontext>(Options => Options.UseSqlite(connectionString));
             services.AddScoped<IFormRepository,FormRepository>();
             services.AddScoped<IFieldRepository,FieldRepository>();
             services.AddScoped<IFieldResponseRepository,FieldResponseRepository>();
